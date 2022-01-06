@@ -12,15 +12,13 @@ namespace DataLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class Customer
+    public partial class Order
     {
-        public string idCustom { get; set; }
-        public string FullName { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
-        public string Address { get; set; }
-        public string MST { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
+        public int id { get; set; }
+        public string NameProduct { get; set; }
+        public Nullable<bool> Status { get; set; }
+        public Nullable<System.DateTime> CreateOrder { get; set; }
+        public string idCus { get; set; }
+        public string pay { get; set; }
     }
 }

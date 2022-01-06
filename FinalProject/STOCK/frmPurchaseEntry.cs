@@ -67,7 +67,7 @@ namespace STOCK
 
             //list_product = new List<objProduct>();
 
-
+            cbStatus.Enabled = false;
 
 
             tabFinance.SelectedTabPage = pageFinancyPaper;
@@ -524,7 +524,7 @@ namespace STOCK
             _add = false;
             _edit = false;
             gvDetail.OptionsBehavior.Editable = false;
-            contextMenuDetail.Enabled = false;
+            contextMenuDetail.Enabled = true;
             tabFinance.TabPages[0].PageEnabled = true;
             showHideControls(true);
             _Control(false);

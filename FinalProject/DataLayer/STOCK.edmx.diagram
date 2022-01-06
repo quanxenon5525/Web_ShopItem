@@ -17,6 +17,8 @@
         <EntityTypeShape EntityType="STOCK.FinancialPaper" Width="1.5" PointX="3.375" PointY="0.75" />
         <EntityTypeShape EntityType="STOCK.FinancialPaperDetail" Width="1.5" PointX="11.375" PointY="9.75" />
         <EntityTypeShape EntityType="STOCK.Customer" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="STOCK.Order" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="STOCK.OrderDetail" Width="1.5" PointX="0.75" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

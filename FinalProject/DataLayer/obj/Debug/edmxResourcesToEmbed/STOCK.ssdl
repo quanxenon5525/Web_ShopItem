@@ -22,6 +22,8 @@
     <Property Name="Email" Type="nvarchar" MaxLength="50" />
     <Property Name="Address" Type="nvarchar" MaxLength="500" />
     <Property Name="MST" Type="nvarchar" MaxLength="50" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Department">
     <Key>
@@ -83,6 +85,26 @@
     <Property Name="Note" Type="nvarchar" MaxLength="600" />
     <Property Name="DISABLED" Type="bit" />
   </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameProduct" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreateOrder" Type="datetime" />
+    <Property Name="idCus" Type="nvarchar" MaxLength="50" />
+    <Property Name="pay" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="int" />
+    <Property Name="ProductId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Quantity" Type="int" />
+  </EntityType>
   <EntityType Name="Product">
     <Key>
       <PropertyRef Name="BARCODE" />
@@ -99,6 +121,7 @@
     <Property Name="CREATE_DATE" Type="datetime" />
     <Property Name="CREATE_BY" Type="int" />
     <Property Name="DISABLED" Type="bit" />
+    <Property Name="Image" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="Source">
     <Key>
@@ -167,6 +190,8 @@
     <EntitySet Name="FinancialPaper" EntityType="Self.FinancialPaper" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FinancialPaperDetail" EntityType="Self.FinancialPaperDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GroupProduct" EntityType="Self.GroupProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Source" EntityType="Self.Source" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />

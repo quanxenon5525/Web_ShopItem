@@ -154,6 +154,12 @@ namespace STOCK
                         frm.ShowDialog();
                         break;
                     }
+                case "DealOrder":
+                    {
+                        fmDeal frm = new fmDeal();
+                        frm.ShowDialog();
+                        break;
+                    }
             }
         }
     }

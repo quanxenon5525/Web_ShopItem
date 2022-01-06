@@ -148,6 +148,7 @@ namespace STOCK
             this.largeImage.Images.SetKeyName(0, "tải xuống (1).jpg");
             this.largeImage.Images.SetKeyName(1, "images (3).png");
             this.largeImage.Images.SetKeyName(2, "finance-graph-paper-icon-isometric-clipart-vector_csp62174254.jpg");
+            this.largeImage.Images.SetKeyName(3, "bill-icon-16.jpg");
             // 
             // smallImage
             // 

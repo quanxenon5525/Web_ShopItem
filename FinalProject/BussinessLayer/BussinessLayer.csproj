@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="CompanyS.cs" />
     <Compile Include="CustomerS.cs" />
+    <Compile Include="DealS.cs" />
     <Compile Include="DepartmentS.cs" />
     <Compile Include="EAN13.cs" />
     <Compile Include="errExport.cs" />

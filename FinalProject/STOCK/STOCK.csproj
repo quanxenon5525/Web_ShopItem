@@ -96,6 +96,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fmDeal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmDeal.Designer.cs">
+      <DependentUpon>fmDeal.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +209,9 @@
       <SubType>Component</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <EmbeddedResource Include="fmDeal.resx">
+      <DependentUpon>fmDeal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>

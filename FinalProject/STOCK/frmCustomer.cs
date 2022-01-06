@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -93,14 +94,26 @@ namespace STOCK
             }
             loadData();
         }
-
+        public string random_syntax()
+        {
+            const string src = "abcdefghijklmnopqrstuvwxyz0123456789";
+            int length = 16;
+            var sb = new StringBuilder();
+            Random RNG = new Random();
+            for (var i = 0; i < length; i++)
+            {
+                var c = src[RNG.Next(0, src.Length)];
+                sb.Append(c);
+            }
+            return sb.ToString();
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
           
             if (_add)
             {
                 Customer com = new Customer();
-                com.idCustom = txtAddress.Text.Substring(1, 5) + "@" + DateTime.Now.Second.ToString() + txtMST.Text;
+                com.idCustom = txtAddress.Text.Substring(1, 5) + "@" + DateTime.Now.Second.ToString() + txtMST.Text+ random_syntax();
                 com.FullName = txtName.Text;
                 com.Address = txtAddress.Text;
                 com.MST = txtMST.Text;

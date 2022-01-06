@@ -16,6 +16,7 @@
     <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
     <Property Name="CREATE_BY" Type="Int32" />
     <Property Name="DISABLED" Type="Boolean" />
+    <Property Name="Image" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="SYS_FUNC">
     <Key>
@@ -60,6 +61,8 @@
       <Parameter Name="DATE2" Mode="In" Type="DateTime" />
     </FunctionImport>
     <EntitySet Name="Customers" EntityType="STOCK.Customer" />
+    <EntitySet Name="Orders" EntityType="STOCK.Order" />
+    <EntitySet Name="OrderDetails" EntityType="STOCK.OrderDetail" />
   </EntityContainer>
   <EntityType Name="Department">
     <Key>
@@ -169,5 +172,27 @@
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="MST" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameProduct" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CreateOrder" Type="DateTime" Precision="3" />
+    <Property Name="idCus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int32" />
+    <Property Name="ProductId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" />
   </EntityType>
 </Schema>
