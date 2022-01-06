@@ -1,0 +1,19 @@
+h6.card-title {
+    padding-bottom: 15px;
+    font-size: 14px;
+    font-family: inherit;
+}
+img.img-sm.float-right {
+    width: 223px;
+    height: 124px;
+    margin-bottom: 16px;
+    padding-left: 15px;
+}
+img#background {
+    height: 100%;
+}
+h6#readmore {
+    margin-left: 90px;
+    margin-top:15px;
+    color: red;
+}
