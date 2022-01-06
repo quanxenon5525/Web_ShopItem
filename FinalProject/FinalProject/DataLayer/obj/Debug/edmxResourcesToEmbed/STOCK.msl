@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="STOCKStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="STOCK.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+          <ScalarProperty Name="NameProduct" ColumnName="NameProduct" />
+          <ScalarProperty Name="NameAT" ColumnName="NameAT" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="IdSupplier" ColumnName="IdSupplier" />
+          <ScalarProperty Name="IdSource" ColumnName="IdSource" />
+          <ScalarProperty Name="IdGroupProduct" ColumnName="IdGroupProduct" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+          <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_FUNC">
+      <EntityTypeMapping TypeName="STOCK.SYS_FUNC">
+        <MappingFragment StoreEntitySet="SYS_FUNC">
+          <ScalarProperty Name="FUNC_CODE" ColumnName="FUNC_CODE" />
+          <ScalarProperty Name="SORT" ColumnName="SORT" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="ISGROUP" ColumnName="ISGROUP" />
+          <ScalarProperty Name="PARENT" ColumnName="PARENT" />
+          <ScalarProperty Name="MENU" ColumnName="MENU" />
+          <ScalarProperty Name="TIPS" ColumnName="TIPS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_SEQUENCE">
+      <EntityTypeMapping TypeName="STOCK.SYS_SEQUENCE">
+        <MappingFragment StoreEntitySet="SYS_SEQUENCE">
+          <ScalarProperty Name="SEQNAME" ColumnName="SEQNAME" />
+          <ScalarProperty Name="SEQVALUE" ColumnName="SEQVALUE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Units">
+      <EntityTypeMapping TypeName="STOCK.Unit">
+        <MappingFragment StoreEntitySet="Unit">
+          <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
+          <ScalarProperty Name="NameUnit" ColumnName="NameUnit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="STOCK.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+          <ScalarProperty Name="Syntax" ColumnName="Syntax" />
+          <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
+          <ScalarProperty Name="IdCompany" ColumnName="IdCompany" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="NameDepartment" ColumnName="NameDepartment" />
+          <ScalarProperty Name="IdDepartment" ColumnName="IdDepartment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="STOCK.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="NameCompany" ColumnName="NameCompany" />
+          <ScalarProperty Name="IdCompany" ColumnName="IdCompany" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="STOCK.Supplier">
+        <MappingFragment StoreEntitySet="Supplier">
+          <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NameSupplier" ColumnName="NameSupplier" />
+          <ScalarProperty Name="IdSupplier" ColumnName="IdSupplier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sources">
+      <EntityTypeMapping TypeName="STOCK.Source">
+        <MappingFragment StoreEntitySet="Source">
+          <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
+          <ScalarProperty Name="NameSource" ColumnName="NameSource" />
+          <ScalarProperty Name="IdSource" ColumnName="IdSource" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupProducts">
+      <EntityTypeMapping TypeName="STOCK.GroupProduct">
+        <MappingFragment StoreEntitySet="GroupProduct">
+          <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="NameGProduct" ColumnName="NameGProduct" />
+          <ScalarProperty Name="IdGroupProduct" ColumnName="IdGroupProduct" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FinancialPapers">
+      <EntityTypeMapping TypeName="STOCK.FinancialPaper">
+        <MappingFragment StoreEntitySet="FinancialPaper">
+          <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IdDepartment2" ColumnName="IdDepartment2" />
+          <ScalarProperty Name="IdDepartment" ColumnName="IdDepartment" />
+          <ScalarProperty Name="IdCompany" ColumnName="IdCompany" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Sum" ColumnName="Sum" />
+          <ScalarProperty Name="Quantily" ColumnName="Quantily" />
+          <ScalarProperty Name="DAY2" ColumnName="DAY2" />
+          <ScalarProperty Name="NoFP2" ColumnName="NoFP2" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="NoFP" ColumnName="NoFP" />
+          <ScalarProperty Name="KeyFinance" ColumnName="KeyFinance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FinancialPaperDetails">
+      <EntityTypeMapping TypeName="STOCK.FinancialPaperDetail">
+        <MappingFragment StoreEntitySet="FinancialPaperDetail">
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Quantily" ColumnName="Quantily" />
+          <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+          <ScalarProperty Name="KeyFinace" ColumnName="KeyFinace" />
+          <ScalarProperty Name="KeyDetail" ColumnName="KeyDetail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="FN_TURNOVER_MONTHLY" FunctionName="STOCK.Store.FN_TURNOVER_MONTHLY">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="STOCK.FN_TURNOVER_MONTHLY_Result">
+          <ScalarProperty Name="IdGroupProduct" ColumnName="IdGroupProduct" />
+          <ScalarProperty Name="NameGProduct" ColumnName="NameGProduct" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="STOCK.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="MST" ColumnName="MST" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="idCustom" ColumnName="idCustom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="STOCK.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="IdCompany" />
+          </Key>
+          <Property Name="IdCompany" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="NameCompany" Type="nvarchar" MaxLength="100" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="DISABLED" Type="bit" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="idCustom" />
+          </Key>
+          <Property Name="idCustom" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="MST" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="IdDepartment" />
+          </Key>
+          <Property Name="IdDepartment" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NameDepartment" Type="nvarchar" MaxLength="100" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="IdCompany" Type="nvarchar" MaxLength="50" />
+          <Property Name="DISABLED" Type="bit" />
+          <Property Name="Syntax" Type="nvarchar" MaxLength="50" />
+          <Property Name="STOCK" Type="bit" />
+        </EntityType>
+        <EntityType Name="FinancialPaper">
+          <Key>
+            <PropertyRef Name="KeyFinance" />
+          </Key>
+          <Property Name="KeyFinance" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NoFP" Type="nvarchar" MaxLength="50" />
+          <Property Name="Category" Type="int" />
+          <Property Name="Discount" Type="int" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="NoFP2" Type="nvarchar" MaxLength="50" />
+          <Property Name="DAY2" Type="datetime" />
+          <Property Name="Quantily" Type="int" />
+          <Property Name="Sum" Type="float" />
+          <Property Name="Note" Type="nvarchar" MaxLength="500" />
+          <Property Name="IdCompany" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdDepartment" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdDepartment2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="int" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="UPDATE_DATE" Type="datetime" />
+          <Property Name="DELETE_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="FinancialPaperDetail">
+          <Key>
+            <PropertyRef Name="KeyDetail" />
+          </Key>
+          <Property Name="KeyDetail" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="KeyFinace" Type="uniqueidentifier" />
+          <Property Name="BARCODE" Type="nvarchar" MaxLength="200" />
+          <Property Name="Quantily" Type="int" />
+          <Property Name="Discount" Type="int" />
+          <Property Name="Price" Type="float" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="No" Type="int" />
+          <Property Name="Amount" Type="float" />
+        </EntityType>
+        <EntityType Name="GroupProduct">
+          <Key>
+            <PropertyRef Name="IdGroupProduct" />
+          </Key>
+          <Property Name="IdGroupProduct" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameGProduct" Type="nvarchar" MaxLength="300" />
+          <Property Name="Note" Type="nvarchar" MaxLength="600" />
+          <Property Name="DISABLED" Type="bit" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="BARCODE" />
+          </Key>
+          <Property Name="BARCODE" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="NameProduct" Type="nvarchar" MaxLength="300" />
+          <Property Name="NameAT" Type="nvarchar" MaxLength="200" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="100" />
+          <Property Name="Price" Type="float" />
+          <Property Name="IdSupplier" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdSource" Type="int" />
+          <Property Name="IdGroupProduct" Type="int" />
+          <Property Name="Note" Type="nvarchar" MaxLength="500" />
+          <Property Name="CREATE_DATE" Type="datetime" />
+          <Property Name="CREATE_BY" Type="int" />
+          <Property Name="DISABLED" Type="bit" />
+        </EntityType>
+        <EntityType Name="Source">
+          <Key>
+            <PropertyRef Name="IdSource" />
+          </Key>
+          <Property Name="IdSource" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameSource" Type="nvarchar" MaxLength="500" />
+          <Property Name="DISABLED" Type="bit" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="IdSupplier" />
+          </Key>
+          <Property Name="IdSupplier" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NameSupplier" Type="nvarchar" MaxLength="501" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="DISABLED" Type="bit" />
+        </EntityType>
+        <EntityType Name="SYS_FUNC">
+          <Key>
+            <PropertyRef Name="FUNC_CODE" />
+          </Key>
+          <Property Name="FUNC_CODE" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="SORT" Type="int" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="500" />
+          <Property Name="ISGROUP" Type="bit" />
+          <Property Name="PARENT" Type="nvarchar" MaxLength="500" />
+          <Property Name="MENU" Type="bit" />
+          <Property Name="TIPS" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SYS_SEQUENCE">
+          <Key>
+            <PropertyRef Name="SEQNAME" />
+          </Key>
+          <Property Name="SEQNAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SEQVALUE" Type="int" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="IdUnit" />
+          </Key>
+          <Property Name="IdUnit" Type="int" Nullable="false" />
+          <Property Name="NameUnit" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <Function Name="FN_TURNOVER_MONTHLY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DATE1" Type="datetime" Mode="In" />
+          <Parameter Name="DATE2" Type="datetime" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="IdGroupProduct" Type="int" />
+                <Property Name="NameGProduct" Type="nvarchar" MaxLength="300" />
+                <Property Name="Amount" Type="float" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <EntityContainer Name="STOCKStoreContainer">
+          <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FinancialPaper" EntityType="Self.FinancialPaper" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FinancialPaperDetail" EntityType="Self.FinancialPaperDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GroupProduct" EntityType="Self.GroupProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Source" EntityType="Self.Source" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SYS_FUNC" EntityType="Self.SYS_FUNC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SYS_SEQUENCE" EntityType="Self.SYS_SEQUENCE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="STOCK" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="BARCODE" />
+          </Key>
+          <Property Name="BARCODE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NameProduct" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="NameAT" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Double" />
+          <Property Name="IdSupplier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdSource" Type="Int32" />
+          <Property Name="IdGroupProduct" Type="Int32" />
+          <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATE_BY" Type="Int32" />
+          <Property Name="DISABLED" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="SYS_FUNC">
+          <Key>
+            <PropertyRef Name="FUNC_CODE" />
+          </Key>
+          <Property Name="FUNC_CODE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SORT" Type="Int32" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ISGROUP" Type="Boolean" />
+          <Property Name="PARENT" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MENU" Type="Boolean" />
+          <Property Name="TIPS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SYS_SEQUENCE">
+          <Key>
+            <PropertyRef Name="SEQNAME" />
+          </Key>
+          <Property Name="SEQNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SEQVALUE" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="IdUnit" />
+          </Key>
+          <Property Name="IdUnit" Type="Int32" Nullable="false" />
+          <Property Name="NameUnit" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="SYS_FUNC" EntityType="Self.SYS_FUNC" />
+          <EntitySet Name="SYS_SEQUENCE" EntityType="Self.SYS_SEQUENCE" />
+          <EntitySet Name="Units" EntityType="Self.Unit" />
+          <EntitySet Name="Departments" EntityType="STOCK.Department" />
+          <EntitySet Name="Companies" EntityType="STOCK.Company" />
+          <EntitySet Name="Suppliers" EntityType="STOCK.Supplier" />
+          <EntitySet Name="Sources" EntityType="STOCK.Source" />
+          <EntitySet Name="GroupProducts" EntityType="STOCK.GroupProduct" />
+          <EntitySet Name="FinancialPapers" EntityType="STOCK.FinancialPaper" />
+          <EntitySet Name="FinancialPaperDetails" EntityType="STOCK.FinancialPaperDetail" />
+          <FunctionImport Name="FN_TURNOVER_MONTHLY" IsComposable="true" ReturnType="Collection(STOCK.FN_TURNOVER_MONTHLY_Result)">
+            <Parameter Name="DATE1" Mode="In" Type="DateTime" />
+            <Parameter Name="DATE2" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <EntitySet Name="Customers" EntityType="STOCK.Customer" />
+        </EntityContainer>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="IdDepartment" />
+          </Key>
+          <Property Name="IdDepartment" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NameDepartment" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IdCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DISABLED" Type="Boolean" />
+          <Property Name="Syntax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="STOCK" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="IdCompany" />
+          </Key>
+          <Property Name="IdCompany" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NameCompany" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DISABLED" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="IdSupplier" />
+          </Key>
+          <Property Name="IdSupplier" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NameSupplier" Type="String" MaxLength="501" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DISABLED" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Source">
+          <Key>
+            <PropertyRef Name="IdSource" />
+          </Key>
+          <Property Name="IdSource" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameSource" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DISABLED" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="GroupProduct">
+          <Key>
+            <PropertyRef Name="IdGroupProduct" />
+          </Key>
+          <Property Name="IdGroupProduct" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameGProduct" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+          <Property Name="DISABLED" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="FinancialPaper">
+          <Key>
+            <PropertyRef Name="KeyFinance" />
+          </Key>
+          <Property Name="KeyFinance" Type="Guid" Nullable="false" />
+          <Property Name="NoFP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="Int32" />
+          <Property Name="Discount" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="NoFP2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DAY2" Type="DateTime" Precision="3" />
+          <Property Name="Quantily" Type="Int32" />
+          <Property Name="Sum" Type="Double" />
+          <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IdCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdDepartment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdDepartment2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DELETE_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="FinancialPaperDetail">
+          <Key>
+            <PropertyRef Name="KeyDetail" />
+          </Key>
+          <Property Name="KeyDetail" Type="Guid" Nullable="false" />
+          <Property Name="KeyFinace" Type="Guid" />
+          <Property Name="BARCODE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Quantily" Type="Int32" />
+          <Property Name="Discount" Type="Int32" />
+          <Property Name="Price" Type="Double" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="No" Type="Int32" />
+          <Property Name="Amount" Type="Double" />
+        </EntityType>
+        <ComplexType Name="FN_TURNOVER_MONTHLY_Result">
+          <Property Type="Int32" Name="IdGroupProduct" Nullable="true" />
+          <Property Type="String" Name="NameGProduct" Nullable="true" MaxLength="300" />
+          <Property Type="Double" Name="Amount" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="idCustom" />
+          </Key>
+          <Property Name="idCustom" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MST" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="STOCKStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="STOCK.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+                <ScalarProperty Name="NameProduct" ColumnName="NameProduct" />
+                <ScalarProperty Name="NameAT" ColumnName="NameAT" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="IdSupplier" ColumnName="IdSupplier" />
+                <ScalarProperty Name="IdSource" ColumnName="IdSource" />
+                <ScalarProperty Name="IdGroupProduct" ColumnName="IdGroupProduct" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+                <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+                <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYS_FUNC">
+            <EntityTypeMapping TypeName="STOCK.SYS_FUNC">
+              <MappingFragment StoreEntitySet="SYS_FUNC">
+                <ScalarProperty Name="FUNC_CODE" ColumnName="FUNC_CODE" />
+                <ScalarProperty Name="SORT" ColumnName="SORT" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="ISGROUP" ColumnName="ISGROUP" />
+                <ScalarProperty Name="PARENT" ColumnName="PARENT" />
+                <ScalarProperty Name="MENU" ColumnName="MENU" />
+                <ScalarProperty Name="TIPS" ColumnName="TIPS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYS_SEQUENCE">
+            <EntityTypeMapping TypeName="STOCK.SYS_SEQUENCE">
+              <MappingFragment StoreEntitySet="SYS_SEQUENCE">
+                <ScalarProperty Name="SEQNAME" ColumnName="SEQNAME" />
+                <ScalarProperty Name="SEQVALUE" ColumnName="SEQVALUE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Units">
+            <EntityTypeMapping TypeName="STOCK.Unit">
+              <MappingFragment StoreEntitySet="Unit">
+                <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
+                <ScalarProperty Name="NameUnit" ColumnName="NameUnit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="STOCK.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+                <ScalarProperty Name="Syntax" ColumnName="Syntax" />
+                <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
+                <ScalarProperty Name="IdCompany" ColumnName="IdCompany" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="NameDepartment" ColumnName="NameDepartment" />
+                <ScalarProperty Name="IdDepartment" ColumnName="IdDepartment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="STOCK.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="NameCompany" ColumnName="NameCompany" />
+                <ScalarProperty Name="IdCompany" ColumnName="IdCompany" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="STOCK.Supplier">
+              <MappingFragment StoreEntitySet="Supplier">
+                <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NameSupplier" ColumnName="NameSupplier" />
+                <ScalarProperty Name="IdSupplier" ColumnName="IdSupplier" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sources">
+            <EntityTypeMapping TypeName="STOCK.Source">
+              <MappingFragment StoreEntitySet="Source">
+                <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
+                <ScalarProperty Name="NameSource" ColumnName="NameSource" />
+                <ScalarProperty Name="IdSource" ColumnName="IdSource" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GroupProducts">
+            <EntityTypeMapping TypeName="STOCK.GroupProduct">
+              <MappingFragment StoreEntitySet="GroupProduct">
+                <ScalarProperty Name="DISABLED" ColumnName="DISABLED" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="NameGProduct" ColumnName="NameGProduct" />
+                <ScalarProperty Name="IdGroupProduct" ColumnName="IdGroupProduct" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FinancialPapers">
+            <EntityTypeMapping TypeName="STOCK.FinancialPaper">
+              <MappingFragment StoreEntitySet="FinancialPaper">
+                <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
+                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IdDepartment2" ColumnName="IdDepartment2" />
+                <ScalarProperty Name="IdDepartment" ColumnName="IdDepartment" />
+                <ScalarProperty Name="IdCompany" ColumnName="IdCompany" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Sum" ColumnName="Sum" />
+                <ScalarProperty Name="Quantily" ColumnName="Quantily" />
+                <ScalarProperty Name="DAY2" ColumnName="DAY2" />
+                <ScalarProperty Name="NoFP2" ColumnName="NoFP2" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="NoFP" ColumnName="NoFP" />
+                <ScalarProperty Name="KeyFinance" ColumnName="KeyFinance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FinancialPaperDetails">
+            <EntityTypeMapping TypeName="STOCK.FinancialPaperDetail">
+              <MappingFragment StoreEntitySet="FinancialPaperDetail">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Quantily" ColumnName="Quantily" />
+                <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+                <ScalarProperty Name="KeyFinace" ColumnName="KeyFinace" />
+                <ScalarProperty Name="KeyDetail" ColumnName="KeyDetail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="FN_TURNOVER_MONTHLY" FunctionName="STOCK.Store.FN_TURNOVER_MONTHLY">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="STOCK.FN_TURNOVER_MONTHLY_Result">
+                <ScalarProperty Name="IdGroupProduct" ColumnName="IdGroupProduct" />
+                <ScalarProperty Name="NameGProduct" ColumnName="NameGProduct" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="STOCK.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="MST" ColumnName="MST" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="idCustom" ColumnName="idCustom" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

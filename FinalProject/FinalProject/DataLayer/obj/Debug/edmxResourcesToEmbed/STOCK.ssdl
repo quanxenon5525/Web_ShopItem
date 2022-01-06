@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="STOCK.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="IdCompany" />
+    </Key>
+    <Property Name="IdCompany" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="NameCompany" Type="nvarchar" MaxLength="100" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="DISABLED" Type="bit" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="idCustom" />
+    </Key>
+    <Property Name="idCustom" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="MST" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="IdDepartment" />
+    </Key>
+    <Property Name="IdDepartment" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NameDepartment" Type="nvarchar" MaxLength="100" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="IdCompany" Type="nvarchar" MaxLength="50" />
+    <Property Name="DISABLED" Type="bit" />
+    <Property Name="Syntax" Type="nvarchar" MaxLength="50" />
+    <Property Name="STOCK" Type="bit" />
+  </EntityType>
+  <EntityType Name="FinancialPaper">
+    <Key>
+      <PropertyRef Name="KeyFinance" />
+    </Key>
+    <Property Name="KeyFinance" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NoFP" Type="nvarchar" MaxLength="50" />
+    <Property Name="Category" Type="int" />
+    <Property Name="Discount" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="NoFP2" Type="nvarchar" MaxLength="50" />
+    <Property Name="DAY2" Type="datetime" />
+    <Property Name="Quantily" Type="int" />
+    <Property Name="Sum" Type="float" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="IdCompany" Type="nvarchar" MaxLength="50" />
+    <Property Name="IdDepartment" Type="nvarchar" MaxLength="50" />
+    <Property Name="IdDepartment2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CREATED_DATE" Type="datetime" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="DELETE_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="FinancialPaperDetail">
+    <Key>
+      <PropertyRef Name="KeyDetail" />
+    </Key>
+    <Property Name="KeyDetail" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="KeyFinace" Type="uniqueidentifier" />
+    <Property Name="BARCODE" Type="nvarchar" MaxLength="200" />
+    <Property Name="Quantily" Type="int" />
+    <Property Name="Discount" Type="int" />
+    <Property Name="Price" Type="float" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="No" Type="int" />
+    <Property Name="Amount" Type="float" />
+  </EntityType>
+  <EntityType Name="GroupProduct">
+    <Key>
+      <PropertyRef Name="IdGroupProduct" />
+    </Key>
+    <Property Name="IdGroupProduct" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameGProduct" Type="nvarchar" MaxLength="300" />
+    <Property Name="Note" Type="nvarchar" MaxLength="600" />
+    <Property Name="DISABLED" Type="bit" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="BARCODE" />
+    </Key>
+    <Property Name="BARCODE" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="NameProduct" Type="nvarchar" MaxLength="300" />
+    <Property Name="NameAT" Type="nvarchar" MaxLength="200" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="100" />
+    <Property Name="Price" Type="float" />
+    <Property Name="IdSupplier" Type="nvarchar" MaxLength="50" />
+    <Property Name="IdSource" Type="int" />
+    <Property Name="IdGroupProduct" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="CREATE_DATE" Type="datetime" />
+    <Property Name="CREATE_BY" Type="int" />
+    <Property Name="DISABLED" Type="bit" />
+  </EntityType>
+  <EntityType Name="Source">
+    <Key>
+      <PropertyRef Name="IdSource" />
+    </Key>
+    <Property Name="IdSource" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameSource" Type="nvarchar" MaxLength="500" />
+    <Property Name="DISABLED" Type="bit" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="IdSupplier" />
+    </Key>
+    <Property Name="IdSupplier" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NameSupplier" Type="nvarchar" MaxLength="501" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="CREATED_DATE" Type="datetime" />
+    <Property Name="DISABLED" Type="bit" />
+  </EntityType>
+  <EntityType Name="SYS_FUNC">
+    <Key>
+      <PropertyRef Name="FUNC_CODE" />
+    </Key>
+    <Property Name="FUNC_CODE" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="SORT" Type="int" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="500" />
+    <Property Name="ISGROUP" Type="bit" />
+    <Property Name="PARENT" Type="nvarchar" MaxLength="500" />
+    <Property Name="MENU" Type="bit" />
+    <Property Name="TIPS" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SYS_SEQUENCE">
+    <Key>
+      <PropertyRef Name="SEQNAME" />
+    </Key>
+    <Property Name="SEQNAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SEQVALUE" Type="int" />
+  </EntityType>
+  <EntityType Name="Unit">
+    <Key>
+      <PropertyRef Name="IdUnit" />
+    </Key>
+    <Property Name="IdUnit" Type="int" Nullable="false" />
+    <Property Name="NameUnit" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <Function Name="FN_TURNOVER_MONTHLY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DATE1" Type="datetime" Mode="In" />
+    <Parameter Name="DATE2" Type="datetime" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="IdGroupProduct" Type="int" />
+          <Property Name="NameGProduct" Type="nvarchar" MaxLength="300" />
+          <Property Name="Amount" Type="float" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <EntityContainer Name="STOCKStoreContainer">
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FinancialPaper" EntityType="Self.FinancialPaper" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FinancialPaperDetail" EntityType="Self.FinancialPaperDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupProduct" EntityType="Self.GroupProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Source" EntityType="Self.Source" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SYS_FUNC" EntityType="Self.SYS_FUNC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SYS_SEQUENCE" EntityType="Self.SYS_SEQUENCE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

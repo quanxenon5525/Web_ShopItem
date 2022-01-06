@@ -1,0 +1,15 @@
+C:\Users\pnhan\source\repos\FinalProject\FinalProject\BussinessLayer\bin\Debug\BussinessLayer.dll.config
+C:\Users\pnhan\source\repos\FinalProject\FinalProject\BussinessLayer\bin\Debug\BussinessLayer.dll
+C:\Users\pnhan\source\repos\FinalProject\FinalProject\BussinessLayer\bin\Debug\BussinessLayer.pdb
+C:\Users\pnhan\source\repos\FinalProject\FinalProject\BussinessLayer\bin\Debug\DataLayer.dll
+C:\Users\pnhan\source\repos\FinalProject\FinalProject\BussinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\pnhan\source\repos\FinalProject\FinalProject\BussinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\pnhan\source\repos\FinalProject\FinalProject\BussinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\pnhan\source\repos\FinalProject\FinalProject\BussinessLayer\bin\Debug\DataLayer.dll.config
+C:\Users\pnhan\source\repos\FinalProject\FinalProject\BussinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\pnhan\source\repos\FinalProject\FinalProject\BussinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\pnhan\source\repos\FinalProject\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.csproj.AssemblyReference.cache
+C:\Users\pnhan\source\repos\FinalProject\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\pnhan\source\repos\FinalProject\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.csproj.CopyComplete
+C:\Users\pnhan\source\repos\FinalProject\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.dll
+C:\Users\pnhan\source\repos\FinalProject\FinalProject\BussinessLayer\obj\Debug\BussinessLayer.pdb
