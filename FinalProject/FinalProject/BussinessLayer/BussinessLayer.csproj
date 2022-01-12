@@ -53,12 +53,16 @@
   <ItemGroup>
     <Compile Include="CompanyS.cs" />
     <Compile Include="CustomerS.cs" />
+    <Compile Include="DealDetailS.cs" />
+    <Compile Include="DealS.cs" />
     <Compile Include="DepartmentS.cs" />
     <Compile Include="EAN13.cs" />
     <Compile Include="errExport.cs" />
     <Compile Include="FinancyDetailS.cs" />
     <Compile Include="FinancyPaperS.cs" />
     <Compile Include="GroupProductS.cs" />
+    <Compile Include="objDeal.cs" />
+    <Compile Include="objDealS.cs" />
     <Compile Include="objFinanceParperDetail.cs" />
     <Compile Include="objGroupProduct.cs" />
     <Compile Include="objProduct.cs" />

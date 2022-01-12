@@ -28,8 +28,7 @@ namespace STOCK.Popup
         }
       private void ErrorImport_Load(object sender, EventArgs e)
         {
-            gcIndex.DataSource = _err;
-            gvIndex.OptionsBehavior.Editable = false;
+           
         }
     }
 }

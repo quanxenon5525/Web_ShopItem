@@ -33,7 +33,7 @@ namespace WebProject.Controllers
 
                 objproduct.SaveChanges();
 
-                int id = obj.id;
+                int id = obj.idOrder;
                 List<OrderDetail> lstOrderDetail = new List<OrderDetail>();
                 foreach(var item in lstCar)
                 {

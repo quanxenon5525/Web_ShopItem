@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="STOCK.Product">
         <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Image" ColumnName="Image" />
           <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
           <ScalarProperty Name="NameProduct" ColumnName="NameProduct" />
           <ScalarProperty Name="NameAT" ColumnName="NameAT" />
@@ -160,12 +161,36 @@
     <EntitySetMapping Name="Customers">
       <EntityTypeMapping TypeName="STOCK.Customer">
         <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
           <ScalarProperty Name="MST" ColumnName="MST" />
           <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="FullName" ColumnName="FullName" />
           <ScalarProperty Name="idCustom" ColumnName="idCustom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="STOCK.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="pay" ColumnName="pay" />
+          <ScalarProperty Name="idCus" ColumnName="idCus" />
+          <ScalarProperty Name="CreateOrder" ColumnName="CreateOrder" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="NameProduct" ColumnName="NameProduct" />
+          <ScalarProperty Name="idOrder" ColumnName="idOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="STOCK.OrderDetail">
+        <MappingFragment StoreEntitySet="OrderDetail">
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="idDetail" ColumnName="idDetail" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

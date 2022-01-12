@@ -14,7 +14,7 @@ namespace WebProject.dbEntities
     
     public partial class Order
     {
-        public int id { get; set; }
+        public int idOrder { get; set; }
         public string NameProduct { get; set; }
         public Nullable<bool> Status { get; set; }
         public Nullable<System.DateTime> CreateOrder { get; set; }

@@ -92,9 +92,9 @@
         </EntityType>
         <EntityType Name="Order">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="idOrder" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idOrder" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameProduct" Type="nvarchar" MaxLength="100" />
           <Property Name="Status" Type="bit" />
           <Property Name="CreateOrder" Type="datetime" />
@@ -103,9 +103,9 @@
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="idDetail" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idDetail" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderId" Type="int" />
           <Property Name="ProductId" Type="nvarchar" MaxLength="50" />
           <Property Name="Quantity" Type="int" />
@@ -195,19 +195,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Product_ManagermentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Customer">
-          <Key>
-            <PropertyRef Name="idCustom" />
-          </Key>
-          <Property Name="idCustom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="MST" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="GroupProduct">
           <Key>
             <PropertyRef Name="IdGroupProduct" />
@@ -226,7 +213,6 @@
           <Property Name="DISABLED" Type="Boolean" />
         </EntityType>
         <EntityContainer Name="Product_ManagermentEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="GroupProducts" EntityType="Self.GroupProduct" />
           <EntitySet Name="Sources" EntityType="Self.Source" />
           <EntitySet Name="Products" EntityType="Product_ManagermentModel.Product" />
@@ -238,8 +224,9 @@
           <EntitySet Name="SYS_FUNC" EntityType="Product_ManagermentModel.SYS_FUNC" />
           <EntitySet Name="SYS_SEQUENCE" EntityType="Product_ManagermentModel.SYS_SEQUENCE" />
           <EntitySet Name="Units" EntityType="Product_ManagermentModel.Unit" />
-          <EntitySet Name="OrderDetails" EntityType="Product_ManagermentModel.OrderDetail" />
+          <EntitySet Name="Customers" EntityType="Product_ManagermentModel.Customer" />
           <EntitySet Name="Orders" EntityType="Product_ManagermentModel.Order" />
+          <EntitySet Name="OrderDetails" EntityType="Product_ManagermentModel.OrderDetail" />
         </EntityContainer>
         <EntityType Name="Product">
           <Key>
@@ -361,25 +348,38 @@
           <Property Name="IdUnit" Type="Int32" Nullable="false" />
           <Property Name="NameUnit" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="OrderDetail">
+        <EntityType Name="Customer">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="idCustom" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="OrderId" Type="Int32" />
-          <Property Name="ProductId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Quantity" Type="Int32" />
+          <Property Name="idCustom" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MST" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="idOrder" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idOrder" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameProduct" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="Boolean" />
           <Property Name="CreateOrder" Type="DateTime" Precision="3" />
           <Property Name="idCus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="pay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="idDetail" />
+          </Key>
+          <Property Name="idDetail" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderId" Type="Int32" />
+          <Property Name="ProductId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -387,20 +387,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Product_ManagermentModelStoreContainer" CdmEntityContainer="Product_ManagermentEntities">
-          <EntitySetMapping Name="Customers">
-            <EntityTypeMapping TypeName="Product_ManagermentModel.Customer">
-              <MappingFragment StoreEntitySet="Customer">
-                <ScalarProperty Name="idCustom" ColumnName="idCustom" />
-                <ScalarProperty Name="FullName" ColumnName="FullName" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="MST" ColumnName="MST" />
-                <ScalarProperty Name="username" ColumnName="username" />
-                <ScalarProperty Name="password" ColumnName="password" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="GroupProducts">
             <EntityTypeMapping TypeName="Product_ManagermentModel.GroupProduct">
               <MappingFragment StoreEntitySet="GroupProduct">
@@ -549,13 +535,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="OrderDetails">
-            <EntityTypeMapping TypeName="Product_ManagermentModel.OrderDetail">
-              <MappingFragment StoreEntitySet="OrderDetail">
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
-                <ScalarProperty Name="id" ColumnName="id" />
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="Product_ManagermentModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="MST" ColumnName="MST" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="idCustom" ColumnName="idCustom" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -567,7 +557,17 @@
                 <ScalarProperty Name="CreateOrder" ColumnName="CreateOrder" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="NameProduct" ColumnName="NameProduct" />
-                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idOrder" ColumnName="idOrder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails">
+            <EntityTypeMapping TypeName="Product_ManagermentModel.OrderDetail">
+              <MappingFragment StoreEntitySet="OrderDetail">
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="idDetail" ColumnName="idDetail" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

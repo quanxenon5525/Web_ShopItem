@@ -20,5 +20,7 @@ namespace DataLayer
         public string Email { get; set; }
         public string Address { get; set; }
         public string MST { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
     }
 }

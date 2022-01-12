@@ -26,5 +26,6 @@ namespace DataLayer
         public Nullable<System.DateTime> CREATE_DATE { get; set; }
         public Nullable<int> CREATE_BY { get; set; }
         public Nullable<bool> DISABLED { get; set; }
+        public string Image { get; set; }
     }
 }

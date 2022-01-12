@@ -14,7 +14,7 @@ namespace WebProject.dbEntities
     
     public partial class OrderDetail
     {
-        public int id { get; set; }
+        public int idDetail { get; set; }
         public Nullable<int> OrderId { get; set; }
         public string ProductId { get; set; }
         public Nullable<int> Quantity { get; set; }

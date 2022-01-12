@@ -67,7 +67,7 @@ namespace STOCK
 
             //list_product = new List<objProduct>();
 
-
+            cbStatus.Enabled = false;
 
 
             tabFinance.SelectedTabPage = pageFinancyPaper;

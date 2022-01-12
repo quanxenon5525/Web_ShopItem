@@ -87,9 +87,9 @@
   </EntityType>
   <EntityType Name="Order">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="idOrder" />
     </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idOrder" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NameProduct" Type="nvarchar" MaxLength="100" />
     <Property Name="Status" Type="bit" />
     <Property Name="CreateOrder" Type="datetime" />
@@ -98,9 +98,9 @@
   </EntityType>
   <EntityType Name="OrderDetail">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="idDetail" />
     </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idDetail" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="OrderId" Type="int" />
     <Property Name="ProductId" Type="nvarchar" MaxLength="50" />
     <Property Name="Quantity" Type="int" />

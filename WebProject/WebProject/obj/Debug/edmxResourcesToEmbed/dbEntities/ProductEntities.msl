@@ -1,20 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="Product_ManagermentModelStoreContainer" CdmEntityContainer="Product_ManagermentEntities">
-    <EntitySetMapping Name="Customers">
-      <EntityTypeMapping TypeName="Product_ManagermentModel.Customer">
-        <MappingFragment StoreEntitySet="Customer">
-          <ScalarProperty Name="idCustom" ColumnName="idCustom" />
-          <ScalarProperty Name="FullName" ColumnName="FullName" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="MST" ColumnName="MST" />
-          <ScalarProperty Name="username" ColumnName="username" />
-          <ScalarProperty Name="password" ColumnName="password" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="GroupProducts">
       <EntityTypeMapping TypeName="Product_ManagermentModel.GroupProduct">
         <MappingFragment StoreEntitySet="GroupProduct">
@@ -163,13 +149,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="OrderDetails">
-      <EntityTypeMapping TypeName="Product_ManagermentModel.OrderDetail">
-        <MappingFragment StoreEntitySet="OrderDetail">
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
-          <ScalarProperty Name="id" ColumnName="id" />
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="Product_ManagermentModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="MST" ColumnName="MST" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="idCustom" ColumnName="idCustom" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -181,7 +171,17 @@
           <ScalarProperty Name="CreateOrder" ColumnName="CreateOrder" />
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="NameProduct" ColumnName="NameProduct" />
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idOrder" ColumnName="idOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="Product_ManagermentModel.OrderDetail">
+        <MappingFragment StoreEntitySet="OrderDetail">
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="idDetail" ColumnName="idDetail" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

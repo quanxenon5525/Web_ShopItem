@@ -25,7 +25,6 @@ namespace WebProject.dbEntities
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<GroupProduct> GroupProducts { get; set; }
         public virtual DbSet<Source> Sources { get; set; }
         public virtual DbSet<Product> Products { get; set; }
@@ -37,7 +36,8 @@ namespace WebProject.dbEntities
         public virtual DbSet<SYS_FUNC> SYS_FUNC { get; set; }
         public virtual DbSet<SYS_SEQUENCE> SYS_SEQUENCE { get; set; }
         public virtual DbSet<Unit> Units { get; set; }
-        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
     }
 }

@@ -184,3 +184,4 @@ C:\Users\pnhan\source\repos\FinalProject\FinalProject\STOCK\bin\Debug\ReportPurc
 C:\Users\pnhan\source\repos\FinalProject\FinalProject\STOCK\bin\Debug\ReportPurchaseEntry.cs
 C:\Users\pnhan\source\repos\FinalProject\FinalProject\STOCK\bin\Debug\ExportReport.rpt
 C:\Users\pnhan\source\repos\FinalProject\FinalProject\STOCK\bin\Debug\ExportReport.cs
+C:\Users\pnhan\source\repos\FinalProject\FinalProject\STOCK\obj\Debug\STOCK.fmDeal.resources

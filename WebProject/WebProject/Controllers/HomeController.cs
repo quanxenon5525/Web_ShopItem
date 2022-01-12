@@ -12,7 +12,7 @@ namespace WebProject.Controllers
 {
     public class HomeController : Controller
     {
-        Product_ManagermentEntities obj = new Product_ManagermentEntities();
+        Product_ManagermentEntities  obj = new Product_ManagermentEntities();
         public ActionResult Index()
         {
             HomeModel homeproduct = new HomeModel();
