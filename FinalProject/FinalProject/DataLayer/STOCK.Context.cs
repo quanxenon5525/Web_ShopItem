@@ -27,20 +27,20 @@ namespace DataLayer
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Company> Companies { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<Department> Departments { get; set; }
+        public virtual DbSet<FinancialPaper> FinancialPapers { get; set; }
+        public virtual DbSet<FinancialPaperDetail> FinancialPaperDetails { get; set; }
+        public virtual DbSet<GroupProduct> GroupProducts { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Source> Sources { get; set; }
+        public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<SYS_FUNC> SYS_FUNC { get; set; }
         public virtual DbSet<SYS_SEQUENCE> SYS_SEQUENCE { get; set; }
         public virtual DbSet<Unit> Units { get; set; }
-        public virtual DbSet<Department> Departments { get; set; }
-        public virtual DbSet<Company> Companies { get; set; }
-        public virtual DbSet<Supplier> Suppliers { get; set; }
-        public virtual DbSet<Source> Sources { get; set; }
-        public virtual DbSet<GroupProduct> GroupProducts { get; set; }
-        public virtual DbSet<FinancialPaper> FinancialPapers { get; set; }
-        public virtual DbSet<FinancialPaperDetail> FinancialPaperDetails { get; set; }
-        public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<Order> Orders { get; set; }
-        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
     
         [DbFunction("Entities", "FN_TURNOVER_MONTHLY")]
         public virtual IQueryable<FN_TURNOVER_MONTHLY_Result> FN_TURNOVER_MONTHLY(Nullable<System.DateTime> dATE1, Nullable<System.DateTime> dATE2)

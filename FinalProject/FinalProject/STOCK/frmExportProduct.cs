@@ -452,10 +452,9 @@ namespace STOCK
                 string path = System.Windows.Forms.Application.StartupPath;
                 document.Load("..\\..\\ExportReport.rpt");
                 Information = document.Database.Tables[0].LogOnInfo;
-                Information.ConnectionInfo.ServerName = "MSI";
-                Information.ConnectionInfo.DatabaseName = "Product_Managerment";
-                Information.ConnectionInfo.UserID = "admin";
-                Information.ConnectionInfo.Password = "999999999";
+                FunctionConnect.check(Information.ConnectionInfo.ServerName, Information.ConnectionInfo.DatabaseName, Information.ConnectionInfo.UserID, Information.ConnectionInfo.Password);
+                document.Database.Tables[0].ApplyLogOnInfo(Information);
+
                 try
                 {
                     document.SetParameterValue("Key", "{" + _keyfin.ToString() + "}");

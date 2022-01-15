@@ -4,21 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0e4e57134a7a494fb96915b02d0509c9" Name="Diagram1" ZoomLevel="92">
-        <EntityTypeShape EntityType="STOCK.Product" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="STOCK.SYS_FUNC" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="STOCK.SYS_SEQUENCE" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="STOCK.Unit" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="STOCK.Department" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="STOCK.Company" Width="1.5" PointX="7.375" PointY="11.75" />
-        <EntityTypeShape EntityType="STOCK.Supplier" Width="1.5" PointX="3.375" PointY="12.75" />
-        <EntityTypeShape EntityType="STOCK.Source" Width="1.5" PointX="13.375" PointY="0.75" />
-        <EntityTypeShape EntityType="STOCK.GroupProduct" Width="1.5" PointX="7.375" PointY="0.75" />
-        <EntityTypeShape EntityType="STOCK.FinancialPaper" Width="1.5" PointX="3.375" PointY="0.75" />
-        <EntityTypeShape EntityType="STOCK.FinancialPaperDetail" Width="1.5" PointX="11.375" PointY="9.75" />
-        <EntityTypeShape EntityType="STOCK.Customer" Width="1.5" PointX="0.75" PointY="13.75" />
-        <EntityTypeShape EntityType="STOCK.Order" Width="1.5" PointX="0.75" PointY="4.75" />
-        <EntityTypeShape EntityType="STOCK.OrderDetail" Width="1.5" PointX="0.75" PointY="7.75" />
+      <Diagram DiagramId="67a2fb384a774dc5ae925abe7ed900e6" Name="Diagram1">
+        <EntityTypeShape EntityType="STOCK.Company" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="STOCK.Customer" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="STOCK.Department" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="STOCK.FinancialPaper" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="STOCK.FinancialPaperDetail" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="STOCK.GroupProduct" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="STOCK.Order" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="STOCK.OrderDetail" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="STOCK.Product" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="STOCK.Source" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="STOCK.Supplier" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="STOCK.SYS_FUNC" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="STOCK.SYS_SEQUENCE" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="STOCK.Unit" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -565,10 +565,13 @@ namespace STOCK
                 string path = System.Windows.Forms.Application.StartupPath;
                 document.Load("..\\..\\ReportPurchaseEntry.rpt");
                 Information = document.Database.Tables[0].LogOnInfo;
-                Information.ConnectionInfo.ServerName = "MSI";
-                Information.ConnectionInfo.DatabaseName = "Product_Managerment";
-                Information.ConnectionInfo.UserID = "admin";
-                Information.ConnectionInfo.Password = "999999999";
+                FunctionConnect.check(Information.ConnectionInfo.ServerName, Information.ConnectionInfo.DatabaseName, Information.ConnectionInfo.UserID, Information.ConnectionInfo.Password);
+                document.Database.Tables[0].ApplyLogOnInfo(Information);
+
+                //Information.ConnectionInfo.ServerName = FunctionConnect._servername;
+                //Information.ConnectionInfo.DatabaseName = FunctionConnect._database;
+                //Information.ConnectionInfo.UserID = FunctionConnect._username;
+                //Information.ConnectionInfo.Password = FunctionConnect._password;
                 try
                 {
                     document.SetParameterValue("Key", "{" + _keyFin.ToString() + "}");
