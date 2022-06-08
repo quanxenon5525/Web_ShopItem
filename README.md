@@ -1,1 +1,1 @@
-# this is a final project SE
+# This is a final project of Software Engineering subject
